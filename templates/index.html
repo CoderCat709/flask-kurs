@@ -10,5 +10,18 @@
 <h1>Velkommen!</h1>
 <p>Denne siden kommer fra en flask-Template</p>
 
+{% if alder <= 18 %}
+    <p>Du er myndig</p>
+{% else %}
+    <p>Du er under 18</p>
+{% endif %}
+
+<from method="POST">
+    <label for="navn">Navn</label>
+    <input type="text" id="navn" name="navn">
+
+    <butten type="submit">Send</butten>
+</from>
+
 </body>
 </html>

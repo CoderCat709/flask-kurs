@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <label for="kurs">Velg kurs:</label>
+
+    <select id="kurs" name="kurs">
+        <option value="python">Python</option>
+        <option value="flask">Flask</option>
+        <option value="Javascript">Javascript</option>
+    </select> -->
+
+    <select name="kurs">
+    {% for kurs in kursliste %}
+        <option value="{{ kurs }}">{{ kurs }}</option>
+    {% endfor %}
+
+    </select>
+    
+</body>
+</html>
