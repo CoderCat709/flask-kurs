@@ -61,5 +61,13 @@ def kurs():
     kursliste = ["Python","Flask","Javascript","Linux"]
     return render_template("kurs.html", kursliste=kursliste)
 
+# @app.route("/radio")
+# def radio():
+#     nivaa = request.form["nivaa"]
+#     godtar = request.from["godtar"]
+#     return render_template("radio.html")
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
