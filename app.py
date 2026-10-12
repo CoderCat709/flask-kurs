@@ -7,6 +7,33 @@ def index():
     alder = 17
     return render_template("index.html", alder=alder)
 
+@app.route("/bestilling", methods=["GET","POST"])
+def bestilling():
+
+    produkter = ["Pizza","Burger","Salat","Wrap"]
+
+    if request.method == "POST":
+        navn = request.form["navn"]
+        produkt = request.form["produkt"]
+        storrelse = request.form["storrelse"]
+        antall = request.form["antall"]
+        kommentar = request.form.get("kommentar", "")
+
+        return render_template(
+            "bekreftelse.html",
+            navn=navn,
+            produkt=produkt,
+            storrelse=storrelse,
+            antall=antall,
+            kommentar=kommentar
+        )
+    return render_template(
+        "bestilling.html",
+        produkter=produkter
+    )
+if __name__ == "__main__":
+    app.run(debug=True)
+
 @app.route("/om")
 def om():
     return render_template("om.html")

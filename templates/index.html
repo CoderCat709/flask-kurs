@@ -18,18 +18,13 @@
     <p>Du er under 18</p>
 {% endif %}
 
+<img src="Images/Logo.png" alt="et Bilde">
+
 <from method="POST">
     <label for="navn">Navn</label>
     <input type="text" id="navn" name="navn">
 
     <butten type="submit">Send</butten>
 </from>
-
-    {% extends "base.html" %}
-
-    {% block titel %}Forside{% endblock %}
-
-    {% blockcontent %}
-
 </body>
 </html>
