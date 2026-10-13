@@ -8,29 +8,34 @@
         href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-    
-    <label for="produkt">Produkt:</label>
-
-    <select id="produkt" name="produkt" required >
-
-        {% for produkt in produkter %}
-            <option value="{{ produkt }}">{{ produkt }}</option>
-        {% produkt %}
-    </select>
-
+ <body>
     <form method="POST">
-        
+        <label for="navn">Navn:</label>
+        <input type="text" id="navn" name="navn" required>
+
         <label for="produkt">Produkt:</label>
-        <input type="text" id="navn" name="navn">
+        <select id="produkt" name="produkt" required>
+            {% for produkt in produkter %}
+                <option value="{{ produkt }}">{{ produkt }}</option>
+            {% endfor %}
+        </select>
+
         <label for="storrelse">Størrelse:</label>
-        <input type="text" id="name" name="storrelse">
+        <select id="storrelse" name="storrelse" required>
+            {% for storrelse in storrelser %}
+                <option value="{{ storrelse }}">{{ storrelse }}</option>
+            {% endfor %}
+        </select>
+
         <label for="antall">Antall:</label>
+        <input type="number" id="antall" name="antall" min="1" required>
 
         <button type="submit">Send</button>
     </form>
 
     <div class="switch">
-    <a herf="{{ url_for('bekreftelse.html') }}">Forside</a>
+        <a href="{{ url_for('index') }}">Forside</a>
     </div>
+</body>
 </body>
 </html>

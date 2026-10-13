@@ -37,14 +37,14 @@ p {
     border: 5px;
     border-radius: 5px;
     background: skyblue;
-    padding: 10px auto;
+    padding: 10px 10px;
 }
 
 h1 {
     border: 20px;
     border-radius: 30px;
     background: aliceblue;
-    padding: 10px auto;
+    padding: 10px 10px;
 }
 
 img {

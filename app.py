@@ -11,6 +11,7 @@ def index():
 def bestilling():
 
     produkter = ["Pizza","Burger","Salat","Wrap"]
+    storrelser = ["Liten","Medium","Stor"]
 
     if request.method == "POST":
         navn = request.form["navn"]
@@ -28,8 +29,9 @@ def bestilling():
             kommentar=kommentar
         )
     return render_template(
-        "bestilling.html",
-        produkter=produkter
+    "bestilling.html",
+    produkter=produkter,
+    storrelser=storrelser
     )
 if __name__ == "__main__":
     app.run(debug=True)
