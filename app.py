@@ -96,7 +96,26 @@ def kurs():
 #     godtar = request.from["godtar"]
 #     return render_template("radio.html")
 
+@app.route("/Ks", methods=["GET", "POST"])
+def Ks():
+    talle = ["+", "-", "*", "/"]
+    
+    if request.method == "POST":
+        tall = request.form.get("tall")
+        kommentar = request.form.get("kommentar", "")
+
+        return render_template(
+            "K.html", 
+            tall=tall,
+            kommentar=kommentar
+        )
+        
+    return render_template(
+        "Ks.html",
+        talle=talle
+    )
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
